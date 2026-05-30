@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下载项目</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #050a12;
+            color: #e8e6e3;
+        }
+        .card {
+            background: rgba(10, 22, 40);
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+        }
+        h1 {
+            color: #d4a574;
+            margin-bottom: 20px;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #d4a574 0%, #c49660 100%);
+            color: #0a1628;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 165, 116, 0.3);
+        }
+        .info {
+            margin-top: 30px;
+            color: #9ca3af;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>📦 项目打包完成！</h1>
+        <p style="margin-bottom: 30px; font-size: 18px;">
+            个人艺术博客项目已准备好下载
+        </p>
+        <a href="my-art-blog.zip" class="download-btn" download>
+            ⬇️ 下载 my-art-blog.zip
+        </a>
+        <div class="info">
+            <p><strong>文件大小：</strong>36KB</p>
+            <p><strong>下载后操作步骤：</strong></p>
+            <ol style="text-align: left; max-width: 400px; margin: 15px auto;">
+                <li>解压 zip 到你电脑上的文件夹</li>
+                <li>在终端进入该文件夹</li>
+                <li>按照之前的 Git 步骤上传到 GitHub</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
