@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教程 - 如何创建网站并上传到 GitHub</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">✨ Art Blog</a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="portfolio.html">作品集</a>
+                <a href="about.html">关于</a>
+                <a href="tutorial.html" class="active">教程</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title fade-in-up">📚 完整教程</h1>
+            <p class="hero-subtitle fade-in-up-delay-1">从创建网站到发布上线的完整指南</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="article-card">
+                <h2>目录</h2>
+                <ol>
+                    <li><a href="#part1">第一部分：创建网站</a></li>
+                    <li><a href="#part2">第二部分：准备 Git 和 GitHub</a></li>
+                    <li><a href="#part3">第三部分：首次上传到 GitHub</a></li>
+                    <li><a href="#part4">第四部分：启用 GitHub Pages</a></li>
+                    <li><a href="#part5">第五部分：以后如何更新网站</a></li>
+                    <li><a href="#part6">第六部分：常见问题</a></li>
+                </ol>
+            </div>
+
+            <div id="part1" class="article-card">
+                <h2>第一部分：创建网站</h2>
+                <p>使用 Trae 创建你的第一个网站！</p>
+                
+                <h3>步骤：</h3>
+                <ol>
+                    <li>打开 Trae 平台</li>
+                    <li>让 AI 帮你创建一个网站（比如个人艺术博客）</li>
+                    <li>在 Trae 云环境里预览网站效果</li>
+                    <li>下载网站文件到本地电脑</li>
+                </ol>
+
+                <div class="info-box">
+                    💡 提示：Trae 会自动生成完整的网站文件，包括 HTML、CSS、JavaScript 等。
+                </div>
+            </div>
+
+            <div id="part2" class="article-card">
+                <h2>第二部分：准备 Git 和 GitHub</h2>
+                
+                <h3>2.1 安装 Git</h3>
+                <ul>
+                    <li><strong>Windows:</strong> 下载 https://git-scm.com/download/win</li>
+                    <li><strong>macOS:</strong> 系统自带，无需安装</li>
+                    <li><strong>Linux:</strong> <code>sudo apt install git</code></li>
+                </ul>
+
+                <h3>2.2 配置 Git</h3>
+                <pre><code>git config --global user.name "你的GitHub用户名"
+git config --global user.email "你的邮箱"</code></pre>
+
+                <h3>2.3 创建 GitHub 仓库</h3>
+                <ol>
+                    <li>打开 https://github.com/new</li>
+                    <li>填写仓库名（比如 my-art-blog）</li>
+                    <li>选择 Public 或 Private</li>
+                    <li><strong>不要</strong>勾选任何初始化选项</li>
+                    <li>点击 Create repository</li>
+                </ol>
+
+                <h3>2.4 创建个人访问令牌（Token）</h3>
+                <ol>
+                    <li>打开 https://github.com/settings/tokens</li>
+                    <li>点击 <strong>Tokens (classic)</strong></li>
+                    <li>点击 <strong>Generate new token</strong> → <strong>Generate new token (classic)</strong></li>
+                    <li>Note 填：my-token</li>
+                    <li>Expiration 选：No expiration</li>
+                    <li>Scopes 勾选：<strong>repo</strong></li>
+                    <li>点击 Generate token</li>
+                    <li>⚠️ <strong>复制生成的 token（ghp_ 开头），保存好！只显示一次！</strong></li>
+                </ol>
+            </div>
+
+            <div id="part3" class="article-card">
+                <h2>第三部分：首次上传到 GitHub</h2>
+
+                <h3>3.1 进入项目文件夹</h3>
+                <p>在终端里，进入你解压后的网站文件夹：</p>
+                <pre><code>cd /path/to/my-art-blog</code></pre>
+
+                <h3>3.2 初始化 Git</h3>
+                <pre><code>git init
+git add .
+git commit -m "feat: initial release"</code></pre>
+
+                <h3>3.3 关联远程仓库</h3>
+                <pre><code>git remote add origin https://github.com/你的用户名/仓库名.git
+git branch -M main</code></pre>
+
+                <h3>3.4 把 Token 加到 URL（重要！）</h3>
+                <pre><code>git remote set-url origin https://你的token@github.com/你的用户名/仓库名.git</code></pre>
+
+                <h3>3.5 推送到 GitHub！</h3>
+                <pre><code>git push -u origin main</code></pre>
+            </div>
+
+            <div id="part4" class="article-card">
+                <h2>第四部分：启用 GitHub Pages</h2>
+
+                <ol>
+                    <li>打开你的 GitHub 仓库</li>
+                    <li>点击 <strong>Settings</strong>（设置）</li>
+                    <li>左侧菜单找到 <strong>Pages</strong></li>
+                    <li>Source 下拉选择 <strong>Deploy from a branch</strong></li>
+                    <li>Branch 选择 <strong>main</strong> 和 <strong>/ (root)</strong></li>
+                    <li>点击 <strong>Save</strong></li>
+                </ol>
+
+                <div class="info-box">
+                    ⏰ 等待 1-5 分钟，网站就上线了！
+                </div>
+
+                <p><strong>你的网站地址：</strong></p>
+                <pre><code>https://你的用户名.github.io/仓库名/</code></pre>
+            </div>
+
+            <div id="part5" class="article-card">
+                <h2>第五部分：以后如何更新网站</h2>
+
+                <h3>只需三步：</h3>
+                <pre><code>git add .
+git commit -m "描述你的修改"
+git push</code></pre>
+
+                <h3>完整示例：</h3>
+                <pre><code># 1. 在本地电脑修改文件
+# 2. 提交并推送
+git add .
+git commit -m "feat: 更新首页文案"
+git push
+
+# 3. 等几分钟，GitHub Pages 自动更新！</code></pre>
+            </div>
+
+            <div id="part6" class="article-card">
+                <h2>第六部分：常见问题</h2>
+
+                <h3>Q: 推送时提示输入密码，怎么办？</h3>
+                <p>A: GitHub 不再支持密码登录，需要用个人访问令牌（Token）。把 Token 加到 URL 里就不用每次输密码了。</p>
+
+                <h3>Q: Token 忘记了怎么办？</h3>
+                <p>A: Token 只显示一次，忘记就去 https://github.com/settings/tokens 重新生成一个。</p>
+
+                <h3>Q: 网站更新后要等多久才能看到？</h3>
+                <p>A: 通常 1-5 分钟，刷新一下浏览器就能看到了。</p>
+
+                <h3>Q: 本地文件和 GitHub 上不一样怎么办？</h3>
+                <p>A: 确保你在正确的文件夹里，用 <code>git status</code> 查看当前状态。</p>
+            </div>
+
+            <div class="article-card">
+                <h2>🎉 恭喜！</h2>
+                <p>你已经学会了创建网站和发布上线的完整流程！</p>
+                <p>继续探索，继续创作！</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2024 Art Blog. Made with ❤️.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
